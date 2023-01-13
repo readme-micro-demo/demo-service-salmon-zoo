@@ -150,7 +150,7 @@ paths:
     get:
       tags:
         - pet
-      summary: Find pet by ID
+      summary: Find pet by ID!!!
       description: Returns a single pet
       operationId: getPetById
       parameters:
@@ -159,8 +159,7 @@ paths:
           description: ID of pet to return
           required: true
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         '200':
           description: successful operation
@@ -175,6 +174,8 @@ paths:
           description: Invalid ID supplied
         '404':
           description: Pet not found
+        '503':
+          description: Internal error
         default:
           description: successful response
       security:
